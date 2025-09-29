@@ -1,0 +1,79 @@
+{
+  "Cgroups": [
+    {
+      "Controller": "blkio",
+      "Path": "/dev/blkio",
+      "Mode": "0775",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "cpu",
+      "Path": "/dev/cpuctl",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "cpuset",
+      "Path": "/dev/cpuset",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "cpuacct",
+      "Path": "/dev/cpuacct",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "memory",
+      "Path": "/dev/memcg",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "devices",
+      "Path": "/dev/devices",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "freezer",
+      "Path": "/dev/freezer",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    },
+    {
+      "Controller": "pids",
+      "Path": "/dev/pids",
+      "Mode": "0755",
+      "UID": "system",
+      "GID": "system"
+    }
+  ],
+  "Cgroups2": {
+    "Path": "/sys/fs/cgroup",
+    "Mode": "0775",
+    "UID": "system",
+    "GID": "system",
+    "Controllers": [
+      {
+        "Controller": "freezer",
+        "Path": "."
+      },
+      {
+        "Controller": "memory",
+        "Path": ".",
+        "NeedsActivation": true,
+        "MaxActivationDepth": 3,
+        "Optional": true
+      }
+    ]
+  }
+}

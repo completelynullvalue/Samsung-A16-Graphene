@@ -1,0 +1,59 @@
+# Samsung A16 hardware-specific initialization for GSI
+# This file provides the necessary hardware initialization for Samsung A16
+
+on early-init
+    # Samsung A16 hardware initialization
+    write /proc/sys/kernel/sysrq 0
+    write /proc/sys/kernel/modprobe \n
+    
+    # Samsung hardware cgroups fix
+    mkdir /dev/cpuset 0755 system system
+    mount cgroup none /dev/cpuset cgroup rw,nosuid,nodev,noexec,relatime,cpuset
+    mkdir /dev/cpuset/foreground 0755 system system
+    mkdir /dev/cpuset/background 0755 system system
+    mkdir /dev/cpuset/system-background 0755 system system
+    mkdir /dev/cpuset/top-app 0755 system system
+    
+    # Create tasks files for keystore2 compatibility
+    write /dev/cpuset/foreground/tasks ""
+    write /dev/cpuset/background/tasks ""
+    write /dev/cpuset/system-background/tasks ""
+    write /dev/cpuset/top-app/tasks ""
+    chmod 644 /dev/cpuset/foreground/tasks
+    chmod 644 /dev/cpuset/background/tasks
+    chmod 644 /dev/cpuset/system-background/tasks
+    chmod 644 /dev/cpuset/top-app/tasks
+
+on post-fs-data
+    # Set Samsung A16 properties
+    setprop ro.hardware a16
+    setprop ro.product.hardware a16
+    setprop ro.build.product a16
+    setprop ro.product.device a16
+    setprop ro.product.brand samsung
+    setprop ro.product.manufacturer samsung
+    setprop ro.product.model SM-A165F
+    
+    # Set GSI compatibility properties
+    setprop ro.gsi.image true
+    setprop ro.gsi.device a16
+    
+    # Set A/B update verification property to prevent boot blocking
+    setprop odsign.verification.done 1
+    setprop ro.boot.verifiedbootstate green
+    setprop ro.boot.veritymode enforcing
+    setprop ro.boot.flash.locked 0
+    
+    # Samsung-specific properties
+    setprop ro.boot.hardware a16
+    setprop ro.boot.product a16
+    setprop ro.boot.vendor samsung
+
+
+
+
+
+
+
+
+

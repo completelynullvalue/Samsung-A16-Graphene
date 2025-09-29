@@ -1,0 +1,360 @@
+//
+// Samsung A16 Vendor Prebuilts for GrapheneOS GSI
+// Converted from PRODUCT_COPY_FILES to proper prebuilt modules
+//
+
+license {
+    name: "device_grapheneos_gsi_clean_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+// =======================
+// Vendor binaries
+// =======================
+cc_prebuilt_binary {
+    name: "dumpfaultd.mt6789",
+    vendor: true,
+    srcs: ["prebuilt/vendor/bin/dumpfaultd.mt6789"],
+}
+
+cc_prebuilt_binary {
+    name: "mt6660_calibration",
+    vendor: true,
+    srcs: ["prebuilt/vendor/bin/mt6660_calibration"],
+}
+
+cc_prebuilt_binary {
+    name: "mtk_agpsd",
+    vendor: true,
+    srcs: ["prebuilt/vendor/bin/mtk_agpsd"],
+}
+
+cc_prebuilt_binary {
+    name: "mtk_pkm_service",
+    vendor: true,
+    srcs: ["prebuilt/vendor/bin/mtk_pkm_service"],
+}
+
+cc_prebuilt_binary {
+    name: "secril_config_svc",
+    vendor: true,
+    srcs: ["prebuilt/vendor/bin/secril_config_svc"],
+}
+
+// =======================
+// Vendor libraries (32-bit)
+// =======================
+cc_prebuilt_library_shared {
+    name: "libBeauty_v4.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libBeauty_v4.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libDualCamBokehCapture.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libDualCamBokehCapture.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libFace_Landmark_API.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libFace_Landmark_API.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libHandGesture.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libHandGesture.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libHprFace_GAE_api.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libHprFace_GAE_api.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libHpr_RecGAE_cvFeature_v1.0.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libHpr_RecGAE_cvFeature_v1.0.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libLocalTM_capture_core.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libLocalTM_capture_core.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libLocalTM_wrapper.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libLocalTM_wrapper.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libaal_mtk",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libaal_mtk.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libadpcmdec_mtk",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib/libadpcmdec_mtk.so"],
+}
+
+// =======================
+// Vendor libraries (64-bit)
+// =======================
+cc_prebuilt_library_shared {
+    name: "libBeauty_v4.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libBeauty_v4.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libDLInterface.camera.samsung",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libDLInterface.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libDualCamBokehCapture.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libDualCamBokehCapture.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libFace_Landmark_API.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libFace_Landmark_API.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libHandGesture.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libHandGesture.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libHprFace_GAE_api.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libHprFace_GAE_api.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libHpr_RecGAE_cvFeature_v1.0.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libHpr_RecGAE_cvFeature_v1.0.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libLocalTM_capture_core.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libLocalTM_capture_core.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libLocalTM_wrapper.camera.samsung_64",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/libLocalTM_wrapper.camera.samsung.so"],
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.power-service-mediatek",
+    vendor: true,
+    srcs: ["prebuilt/vendor/lib64/android.hardware.power-service-mediatek.so"],
+}
+
+// =======================
+// Init configuration files
+// =======================
+prebuilt_etc {
+    name: "software-keymaster.rc",
+    src: "software-keymaster.rc",
+    sub_dir: "init",
+    filename: "software-keymaster.rc",
+}
+
+prebuilt_etc {
+    name: "health-hal.rc",
+    src: "health-hal.rc",
+    sub_dir: "init",
+    filename: "health-hal.rc",
+}
+
+prebuilt_etc {
+    name: "init.gsi_clean.rc",
+    src: "init.gsi_clean.rc",
+    sub_dir: "init",
+    filename: "init.gsi_clean.rc",
+}
+
+prebuilt_etc {
+    name: "disable-vendor-services.rc",
+    src: "disable-vendor-services.rc",
+    sub_dir: "init",
+    filename: "disable-vendor-services.rc",
+}
+
+prebuilt_etc {
+    name: "fix-linkerconfig.rc",
+    src: "fix-linkerconfig.rc",
+    sub_dir: "init",
+    filename: "fix-linkerconfig.rc",
+}
+
+prebuilt_etc {
+    name: "gsi-vendor-mount.rc",
+    src: "gsi-vendor-mount.rc",
+    sub_dir: "init",
+    filename: "gsi-vendor-mount.rc",
+}
+
+// =======================
+// Additional KATI-only files (only existing files)
+// =======================
+
+prebuilt_etc {
+    name: "vendor-build.prop",
+    src: "prebuilt/vendor/build.prop",
+    vendor: true,
+    filename: "build.prop",
+}
+
+prebuilt_etc {
+    name: "audio_policy_configuration.xml",
+    src: "prebuilt/vendor/etc/audio_policy_configuration.xml",
+    sub_dir: "vendor/etc",
+    filename: "audio_policy_configuration.xml",
+}
+
+prebuilt_etc {
+    name: "bluetooth_audio_policy_configuration.xml",
+    src: "prebuilt/vendor/etc/bluetooth_audio_policy_configuration.xml",
+    sub_dir: "vendor/etc",
+    filename: "bluetooth_audio_policy_configuration.xml",
+}
+
+
+prebuilt_etc {
+    name: "fstab.mt6789",
+    src: "prebuilt/vendor/etc/fstab.mt6789",
+    sub_dir: "vendor/etc",
+    filename: "fstab.mt6789",
+}
+
+prebuilt_etc {
+    name: "android.hardware.audio.service.mediatek.rc",
+    src: "prebuilt/vendor/etc/init/android.hardware.audio.service.mediatek.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "android.hardware.audio.service.mediatek.rc",
+}
+
+prebuilt_etc {
+    name: "android.hardware.bluetooth@1.1-service-mediatek.rc",
+    src: "prebuilt/vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "android.hardware.bluetooth@1.1-service-mediatek.rc",
+}
+
+
+prebuilt_etc {
+    name: "face-default-sec.rc",
+    src: "prebuilt/vendor/etc/init/face-default-sec.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "face-default-sec.rc",
+}
+
+prebuilt_etc {
+    name: "hyper-default-sec.rc",
+    src: "prebuilt/vendor/etc/init/hyper-default-sec.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "hyper-default-sec.rc",
+}
+
+prebuilt_etc {
+    name: "init.nfc.samsung.rc",
+    src: "prebuilt/vendor/etc/init/init.nfc.samsung.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "init.nfc.samsung.rc",
+}
+
+prebuilt_etc {
+    name: "lights-default-sec.rc",
+    src: "prebuilt/vendor/etc/init/lights-default-sec.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "lights-default-sec.rc",
+}
+
+prebuilt_etc {
+    name: "teegris_v4.rc",
+    src: "prebuilt/vendor/etc/init/teegris_v4.rc",
+    sub_dir: "vendor/etc/init",
+    filename: "teegris_v4.rc",
+}
+
+prebuilt_etc {
+    name: "media_codecs.xml",
+    src: "prebuilt/vendor/etc/media_codecs.xml",
+    sub_dir: "vendor/etc",
+    filename: "media_codecs.xml",
+}
+
+prebuilt_etc {
+    name: "media_profiles_V1_0.xml",
+    src: "prebuilt/vendor/etc/media_profiles_V1_0.xml",
+    sub_dir: "vendor/etc",
+    filename: "media_profiles_V1_0.xml",
+}
+
+prebuilt_etc {
+    name: "android.software.ipsec_tunnels.xml",
+    src: "prebuilt/vendor/etc/permissions/android.software.ipsec_tunnels.xml",
+    sub_dir: "vendor/etc/permissions",
+    filename: "android.software.ipsec_tunnels.xml",
+}
+
+prebuilt_etc {
+    name: "samsung.software.secure_key_service.xml",
+    src: "prebuilt/vendor/etc/permissions/samsung.software.secure_key_service.xml",
+    sub_dir: "vendor/etc/permissions",
+    filename: "samsung.software.secure_key_service.xml",
+}
+
+prebuilt_etc {
+    name: "vendor.samsung.hardware.telephony.cdma_excluded.xml",
+    src: "prebuilt/vendor/etc/permissions/vendor.samsung.hardware.telephony.cdma_excluded.xml",
+    sub_dir: "vendor/etc/permissions",
+    filename: "vendor.samsung.hardware.telephony.cdma_excluded.xml",
+}
+
+prebuilt_etc {
+    name: "vendor.samsung.hardware.telephony.gsm.xml",
+    src: "prebuilt/vendor/etc/permissions/vendor.samsung.hardware.telephony.gsm.xml",
+    sub_dir: "vendor/etc/permissions",
+    filename: "vendor.samsung.hardware.telephony.gsm.xml",
+}
+
+prebuilt_etc {
+    name: "vendor.samsung.hardware.telephony.satellite.xml",
+    src: "prebuilt/vendor/etc/permissions/vendor.samsung.hardware.telephony.satellite.xml",
+    sub_dir: "vendor/etc/permissions",
+    filename: "vendor.samsung.hardware.telephony.satellite.xml",
+}
+
+prebuilt_etc {
+    name: "public.libraries.txt",
+    src: "prebuilt/vendor/etc/public.libraries.txt",
+    sub_dir: "vendor/etc",
+    filename: "public.libraries.txt",
+}
+
+

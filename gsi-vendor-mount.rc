@@ -1,0 +1,22 @@
+# GSI Clean - Vendor Partition Mounting
+# Works with separate vendor partition (Samsung A16)
+
+on post-fs
+    # Skip vendor directory creation - vendor partition is already mounted
+    # The vendor partition contains all necessary directories and files
+
+    # Vendor partition already contains all necessary files
+    # No need to mount system libraries - Samsung vendor has everything
+
+    # Set vendor properties for compatibility
+    setprop ro.vendor.build.fingerprint ${ro.build.fingerprint}
+    setprop ro.vendor.build.version.release ${ro.build.version.release}
+    setprop ro.vendor.build.version.security_patch ${ro.build.version.security_patch}
+    setprop ro.vendor.product.device ${ro.product.device}
+    setprop ro.vendor.product.model ${ro.product.model}
+    setprop ro.vendor.product.brand ${ro.product.brand}
+    setprop ro.vendor.product.manufacturer ${ro.product.manufacturer}
+
+on early-boot
+    # Samsung vendor partition already has all services configured
+    # No need to start additional services - they're handled by vendor init

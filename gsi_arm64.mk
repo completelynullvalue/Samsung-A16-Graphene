@@ -125,6 +125,10 @@ BOARD_HARDENED_MALLOC := false
 # Explicitly disable hardened malloc packages
 PRODUCT_PACKAGES := $(filter-out libhardened_malloc libhardened_malloc.hwasan,$(PRODUCT_PACKAGES))
 
+# Disable problematic fs_config modules that cause install conflicts
+# These are automatically included but cause conflicts when vendor is packed into system
+PRODUCT_PACKAGES := $(filter-out fs_config_dirs_odm fs_config_dirs_odm_dlkm,$(PRODUCT_PACKAGES))
+
 # Additional Scudo configuration
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.debuggable=1 \

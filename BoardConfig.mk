@@ -122,7 +122,11 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_MOUNT_POINT := system
 # TARGET_COPY_OUT_PRODUCT := system/product  # Pack product directly into /system - let build system handle this
 # TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext  # Pack system_ext directly into /system - let build system handle this
-# TARGET_COPY_OUT_VENDOR := system/vendor  # Disabled - vendor files use TARGET_COPY_OUT_SYSTEM/vendor/ directly
+# Try using separate vendor partition to avoid fs_config conflicts
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824  # 1GB
+BOARD_USES_VENDORIMAGE := true
 # BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4  # Disabled - packed into system
 # BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4  # Disabled - packed into system
 # BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -156,6 +160,7 @@ BOARD_GSI_DYNAMIC_PARTITIONS_SIZE := 8442450944  # 6GB total
 BOARD_DYNAMIC_PARTITION_ENABLE := true
 
 # GSI additional configurations
+TARGET_COPY_OUT_SYSTEM := system
 BOARD_USES_SYSTEM_DLKMIMAGE := true
 BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
@@ -229,3 +234,14 @@ BOARD_SEPOLICY_DIRS += \
 # Additional GSI-specific SELinux configuration
 BOARD_SEPOLICY_M4DEFS += \
     -D keystore_gsi_policy=1
+    
+# Fstab shit
+TARGET_NO_CUTTLEFISH_FSTAB := true
+
+# Treble disabled
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+
+# Vendor image disabled
+BOARD_USES_VENDORIMAGE := false
+
+

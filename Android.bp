@@ -357,4 +357,10 @@ prebuilt_etc {
     filename: "public.libraries.txt",
 }
 
+// GSI-specific linkerconfig script installed to system/bin
+sh_binary {
+    name: "linkerconfig-gsi",
+    src: "linkerconfig-gsi.sh",
+    filename: "linkerconfig-gsi",
+}
 

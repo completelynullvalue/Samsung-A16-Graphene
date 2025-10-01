@@ -61,8 +61,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound?=pixiedust.ogg \
     ro.com.android.dataroaming?=true \
 
-PRODUCT_COPY_FILES += \
-    device/grapheneos/gsi_clean/linkerconfig-gsi.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/linkerconfig-gsi
+# linkerconfig-gsi is now provided by Soong sh_binary module
 
 # SELinux policy for GSI Clean (patched directly into platform policy)
 # Policy definitions: /system/sepolicy/private/gsi_clean.te
@@ -79,7 +78,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Disable VINTF check for audio files (false positive detection)
 BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 
-
+PRODUCT_VENDOR_MOVE_ENABLED := false
 
 
 
